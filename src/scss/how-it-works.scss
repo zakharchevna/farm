@@ -1,0 +1,82 @@
+.how-it-works {
+
+   &__container {
+      display: grid;
+      row-gap: rem(30);
+      @include adaptiveValue("padding-bottom", 100, 25);
+      @media (min-width:$tablet) {
+         grid-template-columns: 1fr percent(750, 1420);
+      }
+   }
+
+   &__content {
+      @include adaptiveValue("padding-right", 96, 30, 1420, 992, 2);
+   }
+
+   &__title {
+      @include adaptiveValue("font-size", 64, 40);
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 32, 16);
+      }
+   }
+
+   &__description {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 48, 30);
+      }
+   }
+
+   &__items {
+      
+   }
+
+   &__item {
+   }
+
+   &__image {
+      
+   }
+}
+
+.item-how-it-works {
+   display: flex;
+   align-items: flex-start;
+   @include adaptiveValue("gap", 32, 20);
+   @media (min-width:$tablet) {
+      max-width: rem(420);
+   }
+   &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 48, 20);
+   }
+   @media (max-width:$mobileSmall){
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+   }
+   &__icon {
+      border-radius: 50%;
+      flex: 0 0 rem(110);
+      height: rem(110);
+      width: rem(110);
+      display: grid;
+      place-items: center;
+      background-color: $howIcons-bg;
+   }
+
+   &__content {
+   }
+
+   &__title {
+      font-size: rem(20);
+      font-weight: 700;
+      &:not(:last-child) {
+         margin-bottom: em(16, 20);
+      }
+   }
+
+   &__description {
+      
+   }
+}
+

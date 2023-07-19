@@ -1,0 +1,87 @@
+.why {
+
+   &__container-big {
+   }
+
+   &__container {
+      display: grid;
+      row-gap: rem(30);
+      @include adaptiveValue("padding-bottom", 100, 25);
+      @include adaptiveValue("padding-top", 100, 25);
+      @media (min-width:$tablet) {
+         grid-template-columns: 1fr percent(680, 1420);
+      }
+   }
+
+   &__content {
+      @include adaptiveValue("padding-right", 177, 30, 1420, 992, 2);
+
+   }
+
+   &__title {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 32, 16);
+      }
+   }
+
+   &__description {
+      @media (min-width:$tablet) {
+         max-width: rem(450);
+      }
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 48, 30);
+      }
+   }
+
+   &__items {
+      &:not(:last-child) {
+         @include adaptiveValue("margin-bottom", 55, 25);
+      }
+   }
+
+   &__button {
+      min-width: rem(222);
+      @media (max-width:$tablet) {
+         width: 100%;
+      }
+   }
+
+   &__image {
+      background-color: transparent;
+      padding: 0;
+      @media (max-width:$tablet) {
+         padding: rem(50) 0;
+      }
+      &__item {
+         border-radius: 20px;
+         overflow: hidden;
+      }
+   }
+}
+.items-why {
+   list-style-type: none;
+   counter-reset: item;
+   display: grid;
+   @include adaptiveValue("gap", 48, 16);
+   &__item {
+      @include adaptiveValue("gap", 50, 20);
+      font-size: rem(20);
+      line-height: math.div(22 , 20);
+      display: flex;
+      align-items: center;
+      &::before {
+         color: $mainColor;
+         counter-increment: item;
+         content: counter(item);
+         width: rem(64);
+         height: rem(64);
+         background-color: $image-bg;
+         border-radius: 50%;
+         font-size: rem(36);
+         font-weight: 600;
+         text-align: center;
+         line-height: rem(70);
+         flex: 0 0 rem(64);
+      }
+   }
+}
